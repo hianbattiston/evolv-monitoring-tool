@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+:root {
+  --evolv-primary: #1b4fd2;
+  --evolv-secondary: #5b6ef5;
+  --evolv-accent: #ed6d55;
+  --evolv-gradient-start: #1b4fd2;
+  --evolv-gradient-end: #5b6ef5;
+  --evolv-text: #1a1a1a;
+  --evolv-text-light: #6b7280;
+  --evolv-background: #ffffff;
+  --evolv-background-alt: #f9fafb;
+  --evolv-card-background: #ffffff;
+  --evolv-border: #e5e7eb;
+  --evolv-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --evolv-hover-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --color-background: var(--evolv-background);
+  --color-foreground: var(--evolv-text);
+  --font-sans: "Inter", sans-serif;
+  --evolv-background-image: radial-gradient(
+    transparent 1px,
+    rgba(0, 0, 0, 0.02) 1px
+  );
+}
+
+[data-theme="dark"] {
+  --evolv-text: #e5e7eb;
+  --evolv-text-light: #9ca3af;
+  --evolv-background: #0e0e0e;
+  --evolv-background-alt: #111111;
+  --evolv-card-background: #000000;
+  --evolv-border: #2f2f2f;
+  --evolv-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2),
+    0 2px 4px -1px rgba(0, 0, 0, 0.1);
+  --evolv-hover-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3),
+    0 4px 6px -2px rgba(0, 0, 0, 0.15);
+  --evolv-background-image: radial-gradient(
+    transparent 1px,
+    rgba(255, 255, 255, 0.02) 1px
+  );
+}
+
+* {
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.03rem;
+}
+
+body {
+  background: var(--evolv-background);
+  color: var(--evolv-text);
+  font-family: "Inter", sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-image: var(--evolv-background-image);
+  background-size: 4px 4px;
+}
+
+.bg-blur {
+  backdrop-filter: blur(10px);
+}
+
+.evolv-gradient-text {
+  background: linear-gradient(
+    90deg,
+    var(--evolv-gradient-start),
+    var(--evolv-gradient-end)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.evolv-gradient-bg {
+  background: linear-gradient(
+    90deg,
+    var(--evolv-gradient-start),
+    var(--evolv-gradient-end)
+  );
+}
+
+.evolv-card {
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.evolv-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}

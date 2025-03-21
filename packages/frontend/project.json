@@ -1,0 +1,50 @@
+{
+  "name": "frontend",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/frontend",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/frontend",
+        "command": "next build"
+      },
+      "dependsOn": [{
+        "projects": ["shared"],
+        "target": "build"
+      }]
+    },
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/frontend",
+        "command": "next dev --turbopack"
+      },
+      "dependsOn": [{
+        "projects": ["shared"],
+        "target": "build"
+      }]
+    },
+    "start": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/frontend",
+        "command": "next start"
+      }
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "eslint packages/frontend"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "echo \"No tests specified for frontend\""
+      }
+    }
+  },
+  "tags": ["type:app", "scope:frontend"]
+}
