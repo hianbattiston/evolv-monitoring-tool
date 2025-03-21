@@ -64,7 +64,7 @@ pnpm run dev
 - `GET /api/experiments/:id/metrics` - Get metrics for a specific experiment
 - `POST /api/experiments/:id/logs` - Add log to a specific experiment
 
-## Tech stack explanation
+## Stack explanation
 
 - **Frontend**: Next.js was not a requirement but I've decided to use it because of my familiarity with it and the speed of development. I haven't implemented any state management, since it's consuming from the live API. I choose Chart.js because I've worked with it before and it's a good choice for this kind of visualization.
 - **Backend**: Express was also a choice of familiarity, simplicity and ease to use. Socket.IO was added for real-time updates and again, familiarity, since I've used it before on multiple projects.
@@ -80,3 +80,4 @@ Now, improvements:
 - Types improvements;
 - Tailwind configuration, adding the color variables and some styles that I've ended up creating with plain CSS;
 - A slightly better design, I choose simplicity, especially with the time constraint;
+- Better usage of the Monorepo structure, adding more utilities and functions.
