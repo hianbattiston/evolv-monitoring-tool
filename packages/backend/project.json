@@ -1,0 +1,49 @@
+{
+  "name": "backend",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/backend/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc -p packages/backend/tsconfig.json"
+      },
+      "dependsOn": [{
+        "projects": ["shared"],
+        "target": "build"
+      }]
+    },
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/backend",
+        "command": "nodemon --exec ts-node src/index.ts"
+      },
+      "dependsOn": [{
+        "projects": ["shared"],
+        "target": "build"
+      }]
+    },
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/backend",
+        "command": "node dist/index.js"
+      }
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "eslint packages/backend"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "echo \"No tests specified for backend\""
+      }
+    }
+  },
+  "tags": ["type:app", "scope:backend"]
+}
