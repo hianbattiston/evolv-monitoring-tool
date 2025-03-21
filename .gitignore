@@ -18,7 +18,7 @@
 /out/
 
 # production
-/build
+/buildix
 
 # misc
 .DS_Store
@@ -45,6 +45,6 @@ next-env.d.ts
 .nxstate
 .nxstate.json
 
-#shared and frontend
+#shared
 /packages/shared/dist
 /packages/frontend/.next
