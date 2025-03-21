@@ -40,12 +40,6 @@ evolv-monitoring-tool/
 2. Install dependencies for both frontend and backend:
 
 ```bash
-# Install backend dependencies
-cd packages/backend
-pnpm install
-
-# Install frontend dependencies
-cd ../frontend
 pnpm install
 ```
 
