@@ -45,8 +45,5 @@ next-env.d.ts
 .nxstate
 .nxstate.json
 
-# frontend
-/packages/frontend/.next
-
 #shared
 /packages/shared/dist
