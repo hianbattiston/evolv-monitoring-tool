@@ -75,3 +75,8 @@ Now, improvements:
 - Tailwind configuration, adding the color variables and some styles that I've ended up creating with plain CSS;
 - A slightly better design, I choose simplicity, especially with the time constraint;
 - Better usage of the Monorepo structure, adding more utilities and functions.
+
+## Video
+
+And here's the video showing the application:
+[https://drive.google.com/file/d/1i3X33JGyrjR7KG21bj1moVmG6pOGSzMk/view?usp=sharing]
