@@ -9,10 +9,12 @@
       "options": {
         "command": "tsc -p packages/backend/tsconfig.json"
       },
-      "dependsOn": [{
-        "projects": ["shared"],
-        "target": "build"
-      }]
+      "dependsOn": [
+        {
+          "projects": ["shared"],
+          "target": "build"
+        }
+      ]
     },
     "dev": {
       "executor": "nx:run-commands",
@@ -20,10 +22,12 @@
         "cwd": "packages/backend",
         "command": "nodemon --exec ts-node src/index.ts"
       },
-      "dependsOn": [{
-        "projects": ["shared"],
-        "target": "build"
-      }]
+      "dependsOn": [
+        {
+          "projects": ["shared"],
+          "target": "build"
+        }
+      ]
     },
     "serve": {
       "executor": "nx:run-commands",
@@ -41,7 +45,8 @@
     "test": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "echo \"No tests specified for backend\""
+        "command": "jest --config packages/backend/jest.config.ts --forceExit --detectOpenHandles",
+        "cwd": "."
       }
     }
   },
