@@ -10,10 +10,12 @@
         "cwd": "packages/frontend",
         "command": "next build"
       },
-      "dependsOn": [{
-        "projects": ["shared"],
-        "target": "build"
-      }]
+      "dependsOn": [
+        {
+          "projects": ["shared"],
+          "target": "build"
+        }
+      ]
     },
     "dev": {
       "executor": "nx:run-commands",
@@ -21,10 +23,12 @@
         "cwd": "packages/frontend",
         "command": "next dev --turbopack"
       },
-      "dependsOn": [{
-        "projects": ["shared"],
-        "target": "build"
-      }]
+      "dependsOn": [
+        {
+          "projects": ["shared"],
+          "target": "build"
+        }
+      ]
     },
     "start": {
       "executor": "nx:run-commands",
@@ -40,10 +44,17 @@
       }
     },
     "test": {
-      "executor": "nx:run-commands",
+      "executor": "@nx/jest:jest",
       "options": {
-        "command": "echo \"No tests specified for frontend\""
-      }
+        "jestConfig": "packages/frontend/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "dependsOn": [
+        {
+          "projects": ["shared"],
+          "target": "build"
+        }
+      ]
     }
   },
   "tags": ["type:app", "scope:frontend"]
